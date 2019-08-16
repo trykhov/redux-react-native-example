@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux' // allows React to interact with redux
-
+import { Provider } from 'react-redux'; // allows React to interact with redux
+import MyApp from './src/MyApp';
 
 const initState = {
   myCounter: 0
@@ -23,9 +23,9 @@ const store = createStore(reducer);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <Provider store={store}>
+      <MyApp />
+    </Provider>
   );
 }
 
